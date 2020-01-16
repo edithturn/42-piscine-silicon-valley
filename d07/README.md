@@ -26,7 +26,29 @@ gcc -c ft_putchar.c
 gcc main.o ft_putchar.o ft_putchar.o -o j07
 ```
 
-# Dynamic Memory Allocation 
+# Dynamic Memory Allocation
+
+## Basic Example
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+int n=10; #We want to reserve 10 characteres in memory
+char * p;
+
+p = malloc(n*sizeof(char))  #Return zise in byts that a variable has
+if(NULL == p)
+{
+    printf("Error memory asignation\n");
+}
+else
+{
+    printf("Memory asigned");
+}
+}
+```
+
 ```c
 #include LEN 42000000
 
