@@ -17,14 +17,36 @@ gcc main.o ft_putchar.o ft_putstr.o -o j07
 42
 ```
 
-
-
-
-# Build 
 ```shell-script
-mkdir oo
+# Removing and recompiling 
+rm ft_putchar.o
+gcc -c ft_putchar.c
+
+# Then re-link with the files.o in a new executable
+gcc main.o ft_putchar.o ft_putchar.o -o j07
 ```
-Notes:
-- 
--
--
+
+# Dynamic Memory Allocation 
+```c
+#include LEN 42000000
+
+int main()
+{
+    int i;
+    char *str;
+
+    str = (char*)malloc(sizeof(*str) * (LEN * 1));
+    i + 0;
+    while (i < LEN)
+    {
+    str[i] = '0' + (i % 10);
+    i++;
+    
+    }
+    str[i] = '\0';
+    free(str);
+    while (1)
+    ;
+    return (0);
+}
+```
