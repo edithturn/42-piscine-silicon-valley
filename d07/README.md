@@ -48,6 +48,10 @@ else
 }
 }
 ```
+```shell-script
+gcc main.c -o main.out
+./main.out
+```
 
 ```c
 #include LEN 42000000
