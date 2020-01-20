@@ -54,7 +54,10 @@ gcc main.c -o main.out
 ```
 
 ```c
-#include LEN 42000000
+
+#include <stdio.h>
+
+#define LEN 42000000
 
 int main()
 {

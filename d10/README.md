@@ -64,8 +64,69 @@ make fclean
 make re
 ```
 
+## Pointers to functions
 
+### Sintax
 
+```c
+#include <unistd.h>
 
+void ft_putchar(char c)
+{
+	write(1, &c,1);
+	return;
+}
+
+int main()
+{
+	void (*f)(char);
+
+	f = &ft_putchar;
+	f('z');
+	return (0);
+}
+```
+
+```c
+#include <unistd.h>
+
+typedef void (*funptr)(char);
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return;
+}
+
+int main()
+{
+	funptr f;
+	
+	f = &ft_putchar;
+	f('z');
+	return(0);	
+}
+```
+
+### Pointers to functions - Example
+
+```shell-script
+- put_stdout -> Wrote in standar output 
+- put_file	 -> Wrote in a file
+- put_network -> Wrote in network
+
+funtion put(where, what)
+{
+	if(where == STDOUT)
+		put_stdout( what);
+	else if( where == FILE )
+		put_file( what )
+	else if ( where == NETWORK )
+		put_network( what );
+	else
+		error();
+}
+
+```
 
 
