@@ -16,6 +16,9 @@ struct s_lists {
 	t_list *next;	
 };
 
+t_list *add_link(t_list * list, char *str);
+void print_list(t_list * list);
+
 #endif
 ```
 
@@ -29,46 +32,55 @@ int main(void)
 	t_list *list;
 
 	list = NULL;
+
 	list = add_link(list, "toto\n");
+	list = add_link(list, "tata\n");
+	list = add_link(list, "tutu\n");
 
-
+	print_list(list);
+	
 	return (0);	
 }
 
 ```
 
-## Makefile example
+### add_link.c
 
 ```c
+#include <stdlib.h>
+#include "list.h"
+
+t_list *add_link(t_list *list, char *str)
+{
+	t_list *tmp;
+	tmp = malloc(sizeof(t_list));
+	if (tmp)
+	{
+		tmp->str = str;
+		tmp->next = list;	
+	}
+	return tmp;
+
+
+}
+```
+### print_list.c
+```c
+#include "list.h"
+
+void print_list(t_list *list)
+{
+	while()
+	{
+		ft_putstr(list->str);
+	}
+}
 
 ```
 
 ```shell-script
-make
-make clean
-make fclean
-make re
+gcc *.c
 ```
 
-## Pointers to functions
 
-### Sintax
 
-```c
-#include <unistd.h>
-
-void ft_putchar(char c)
-{
-	write(1, &c,1);
-	return;
-}
-
-int main()
-{
-	void (*f)(char);
-
-	f = &ft_putchar;
-	f('z');
-	return (0);
-}
-```
